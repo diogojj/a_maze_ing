@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mazegen"
+version = "1.0.0"
+description = "A small, reusable maze generator (DFS carve, BFS solve)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["maze", "generator", "labyrinth", "dfs", "bfs"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+]
+
+# mazegen is a single flat module (mazegen.py), not a package folder,
+# so it is shipped as a py-module rather than a discovered package.
+[tool.hatch.build.targets.wheel]
+include = ["mazegen"]
